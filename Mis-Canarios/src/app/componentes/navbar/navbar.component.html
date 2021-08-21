@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async )}" fixedInViewport="false"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+
+        <mat-toolbar color="primary">Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item href="#">Inicio </a>
+            <a mat-list-item href="#">Canarios</a>
+            <a mat-list-item href="#">Registro crianza</a>
+            <a mat-list-item href="#">Compra/Venta </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span>
+                <mat-icon>
+                    <img src="../../../assets/img/gorrioniconoblanco.png" height="160%">
+                </mat-icon>Mis Canarios
+            </span>
+            <span class="example-spacer"></span>
+            <span [ngClass]="{hidden: (isHandset$ | async )}">
+                <button mat-stroked-button class="btn" [routerLink]="['/inicio']">Inicio</button>
+                <button mat-stroked-button class="btn" [routerLink]="['/registro-canarios']">Canarios</button>
+                <button mat-stroked-button class="btn" [routerLink]="['/registro-crianza']">Registro crianza</button>
+                <button mat-stroked-button class="btn">Compra/Venta</button>
+            </span>
+            <span class="example-spacer"></span>
+            <span>
+                <div>
+                    <label style="font-size: 15px;" >usuario</label>&nbsp;
+                    <button mat-mini-fab [matMenuTriggerFor]="beforeMenu">
+                        <mat-icon>account_circle</mat-icon>
+                        <mat-menu #beforeMenu="matMenu" xPosition="before">
+                            <button mat-menu-item [routerLink]="['/login-register']">Ingresar</button>
+                            <!-- <button mat-menu-item [routerLink]="['/login-register']">Registrarce</button> -->
+                          </mat-menu>
+                    </button>
+                </div>
+            </span>
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

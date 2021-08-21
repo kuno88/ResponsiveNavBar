@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mis-canarios": {
+      "hosting": {
+        "Mis-Canarios": [
+          "mis-canarios"
+        ]
+      }
+    }
+  }
+}

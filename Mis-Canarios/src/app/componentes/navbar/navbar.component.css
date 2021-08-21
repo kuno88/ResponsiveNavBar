@@ -1,0 +1,38 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
+ 
+}
+
+.sidenav .mat-toolbar {
+  background: #3f51b5;
+ 
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.hidden{
+  display: none;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.btn{
+  font-size: 20px;
+}
+.btn2{
+  font-size: 20px;
+  width: 100%;
+}
+
+.claseIcono{
+  align-items: flex-start;
+}
