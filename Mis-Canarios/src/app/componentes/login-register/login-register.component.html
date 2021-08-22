@@ -1,0 +1,59 @@
+<div class="body">
+    <mat-spinner diameter="70" class="spinner" style="margin-bottom: 20;" *ngIf="loading"></mat-spinner>
+
+    <mat-tab-group *ngIf="!loading">
+         <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">
+                    <img src="../../../assets/img/loginIcon.png" width="80%" height="80%">
+                </mat-icon>
+                Ingresar
+            </ng-template>
+            
+            
+            <form [formGroup]="formLogin" (ngSubmit)="logear()">
+                <div class="body">
+                    <div class="login">
+                        <h1 class="h3 mb-3 fw-normal">Ingresar</h1>
+                        <mat-form-field class="ancho" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="email" formControlName="emailLogin">
+                        </mat-form-field>
+                        <mat-form-field class="ancho" appearance="fill">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput type="password" formControlName="passwordLogin">
+                        </mat-form-field>
+                        <br>
+                        <button [disabled]="formLogin.invalid" type="submit" class="ancho" mat-raised-button mat-button color="primary">Ingresar</button>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">
+                    <img src="../../../assets/img/registerIcon.png" width="80%" height="80%">
+                </mat-icon>
+                Registrarce
+            </ng-template>
+            <form [formGroup]="formRegister" (ngSubmit)="registrar()">
+                <div class="body">
+                    <div class="login">
+                        <h1 class="h3 mb-3 fw-normal">Registrarce</h1>
+                        <mat-form-field class="ancho" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="email" formControlName="emailRegister">
+                        </mat-form-field>
+                        <mat-form-field class="ancho" appearance="fill">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput type="password" formControlName="passwordRegister">
+                        </mat-form-field>
+                        <br>
+                        <button [disabled]="formRegister.invalid" type="submit" class="ancho" mat-raised-button mat-button color="primary">Registrar</button>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
+</div>

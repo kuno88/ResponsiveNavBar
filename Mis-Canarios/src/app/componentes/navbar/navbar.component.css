@@ -36,3 +36,15 @@
 .claseIcono{
   align-items: flex-start;
 }
+.navElementos{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  padding: 20px 15px; 
+}
+
+a:hover{
+  background: rgba(252, 251, 251, 0.527);
+}
+
+
