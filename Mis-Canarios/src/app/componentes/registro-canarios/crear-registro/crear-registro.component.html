@@ -1,1 +1,129 @@
-<p>crear-registro works!</p>
+<div class="container">
+    <mat-toolbar>
+        <span>Registrar canario</span>
+    </mat-toolbar>
+
+    <mat-card style="margin-top: 10px;">
+
+        <form [formGroup]="formRegistroCanario" (ngSubmit)="agregarCanario()">
+
+            <mat-grid-list cols="2" rowHeight="70px">
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <h2>Datos criador</h2>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Procedencia</mat-label>
+                        <input matInput formControlName="procedencia">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Codigo/Numero de criador</mat-label>
+                        <input matInput formControlName="codNumCriador">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Color anillo</mat-label>
+                        <mat-select formControlName="genero" formControlName="colorAnillo">
+                            <option value="seleccionar" disabled selected>Seleccionar</option>
+                            <mat-option style="color: purple;" value="violeta">Violeta</mat-option>
+                            <mat-option style="color: green;" value="verde">Verde</mat-option>
+                            <mat-option style="color: black;" value="negro">Negro</mat-option>
+                            <mat-option style="color: red;" value="rojo">Rojo</mat-option>
+                            <mat-option style="color: blue;" value="azul">Azul</mat-option>
+                            <mat-option style="color: orangered;" value="naranja">Naranja</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Numero de anillo</mat-label>
+                        <input matInput type="text" formControlName="nAnillo"
+                            onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <h2>Datos especificos del canario</h2>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Genero</mat-label>
+                        <mat-select formControlName="genero">
+                            <mat-option *ngFor="let item of genero" [value]="item.value">
+                                {{item.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <button (click)="agregarLinea()" type="submit" mat-raised-button color="primary">Seleccionar linea</button>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Linea</mat-label>
+                        <input matInput [(ngModel)]="linea" formControlName="linea">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <h2>Datos del estado del canario</h2>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="3">
+                    <div class="example-container">
+                        <label>Estado: </label>
+                        <mat-list>
+                            <mat-radio-group formControlName="estado">
+                                <mat-list-item>
+                                    <mat-radio-button value="criadero">Criadero</mat-radio-button>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <mat-radio-button value="muerto">Muerto</mat-radio-button>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <mat-radio-button value="vendido">Vendido</mat-radio-button>
+                                </mat-list-item>
+                            </mat-radio-group>
+                        </mat-list>
+                    </div>
+                </mat-grid-tile>
+                
+                <mat-grid-tile [colspan]="1" [rowspan]="3">
+                    <mat-form-field class="ancho">
+                        <mat-label>Fecha Estado</mat-label>
+                        <input matInput type="date" formControlName="fechaEstado">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="3">
+                    <mat-form-field class="ancho">
+                        <mat-label>Observacion del estado</mat-label>
+                        <textarea matInput formControlName="observacionEstado"></textarea>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <h2>Detalles</h2>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Observaciones</mat-label>
+                        <textarea matInput formControlName="observaciones"></textarea>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2" [rowspan]="1">
+                    <button [disabled]="formRegistroCanario.invalid" type="submit" mat-raised-button
+                        color="primary">Aceptar</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>

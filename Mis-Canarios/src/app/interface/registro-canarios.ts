@@ -1,4 +1,4 @@
-export interface RegistroCanarios {
+export interface RegistroCanariosInterface {
     id?: string,
     usuario: string|null|undefined,
     procedencia: string,

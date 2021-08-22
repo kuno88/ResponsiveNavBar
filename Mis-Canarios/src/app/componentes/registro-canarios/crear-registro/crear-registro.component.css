@@ -1,0 +1,22 @@
+.ancho{
+    width: 80%;
+}
+.alto{
+  height: auto;
+}
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .example-container .mat-radio-button {
+    margin: 0 12px;
+  }

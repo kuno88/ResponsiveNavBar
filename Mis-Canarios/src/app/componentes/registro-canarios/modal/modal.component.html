@@ -1,1 +1,12 @@
-<p>modal works!</p>
+<mat-dialog-content class="mat-dialog-content">
+    <div *ngIf="data.content; else showNewForm">
+        <app-editar-canario [canario]="data.content"></app-editar-canario>
+    </div>
+<ng-template #showNewForm>
+    <app-crear-canario></app-crear-canario>
+</ng-template>
+    
+</mat-dialog-content>
+ <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cerrar</button>
+  </div> 

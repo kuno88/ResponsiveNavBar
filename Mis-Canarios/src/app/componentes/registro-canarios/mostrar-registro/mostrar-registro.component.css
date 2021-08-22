@@ -1,0 +1,11 @@
+.ancho{
+    width: 80%;
+    align-items: center;
+}
+.alto{
+  height: auto;
+}
+.card{
+  margin-top: 10px;
+  background-color: rgb(195, 222, 223);
+}

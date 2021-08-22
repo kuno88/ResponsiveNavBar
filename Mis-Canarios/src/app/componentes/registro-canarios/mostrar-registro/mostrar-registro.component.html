@@ -1,1 +1,87 @@
-<p>mostrar-registro works!</p>
+<div class="container" style="border-style: ridge;">
+    <mat-toolbar>
+      <span>Informacion del canario</span>
+     
+    </mat-toolbar>
+    <mat-card class="card" >
+      
+      <mat-grid-list cols="5" rowHeight="50px">
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Procedencia: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label >{{data.procedencia}}</mat-label>
+        </mat-grid-tile>
+  
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Codigo de criador: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label >{{data.codNumCriador}}</mat-label>
+        </mat-grid-tile>
+  
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Numero de anillo: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label>{{data.nAnillo}}</mat-label>
+        </mat-grid-tile>
+  
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Color de anillo: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label>{{data.colorAnillo}}</mat-label>
+        </mat-grid-tile>
+       
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Genero: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label>{{data.genero}}</mat-label>
+        </mat-grid-tile>
+  
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Linea: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label style="text-align: center;">{{data.linea}}</mat-label>
+        </mat-grid-tile>
+  
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Estado: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label>{{data.estado}}</mat-label>
+        </mat-grid-tile>
+  
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Fecha estado: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label>{{data.fechaEstado}}</mat-label>
+        </mat-grid-tile>
+  
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Observacion de estado: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label>{{data.observacionEstado}}</mat-label>
+        </mat-grid-tile>
+  
+        <mat-grid-tile [colspan]="2" [rowspan]="1" style="background-color: darkgray;">
+          <mat-label>Observaciones: </mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+          <mat-label>{{data.observaciones}}</mat-label>
+        </mat-grid-tile>
+  
+  
+      </mat-grid-list>
+    </mat-card>
+  
+  </div>
+    <mat-dialog-actions align="end">
+      <button mat-button color="primary" mat-dialog-close style="background-color: rgb(197, 197, 197);">Cerrar</button>
+    </mat-dialog-actions>
+  
